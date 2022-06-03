@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "de7d84e5-a3af-4f9f-8c26-63f9eb3405ff",
+		"name": "PhoneBook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21197364"
+	},
+	"item": [
+		{
+			"name": "FindAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "savePerson",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Юлия\",\r\n    \"surname\": \"Юльева\",\r\n    \"country\": \"Россия\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteByNameSurname",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Вася\",\r\n    \"surname\": \"Петров\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/person/delete-by-name-surname",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"delete-by-name-surname"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNumber",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/phone/add-number",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phone",
+						"add-number"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePerson",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 9,\r\n    \"surname\" : \"Гарсия\",\r\n    \"country\" : \"Казахстан\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/person/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteNumber",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/phone/delete-number/+7890",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phone",
+						"delete-number",
+						"+7890"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findPersonByNumber",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/phone/find-person-by-number/+79876543210",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phone",
+						"find-person-by-number",
+						"+79876543210"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findNumberByPersonNameAndSurname",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Петр\",\r\n    \"surname\": \"Петровский\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/phone/find-numbers-by-person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phone",
+						"find-numbers-by-person"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
